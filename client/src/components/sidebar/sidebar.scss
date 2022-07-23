@@ -1,0 +1,47 @@
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    width: 16vw;
+    height: 100vh;
+    background-color: black;
+    .navOpt {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        gap: 5px;
+        .navItems {
+            display: flex;
+            .navIcon {
+                font-size: 33px;
+                color: white;
+            }
+            .navText {
+                display: flex;
+                align-items: center;
+                width: 13vw;
+                font-size: large;
+                font-weight: bold;
+                color: grey;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+    .trendPlaylist {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: auto;
+        .trendItem {
+            color: grey;
+            font-size: large;
+            font-weight: bold;
+            padding: 5px;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
