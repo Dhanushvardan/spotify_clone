@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./bottombar.scss";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
@@ -10,13 +10,54 @@ import ShuffleRoundedIcon from "@mui/icons-material/ShuffleRounded";
 import PauseCircleRoundedIcon from "@mui/icons-material/PauseCircleRounded";
 
 export default function Bottombar() {
+  const audioPlayer = useRef();
+  const progressBar = useRef();
+  const animationRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [isShuffle, setIsShuffle] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    const seconds = Math.floor(audioPlayer.current.duration);
+    setDuration(seconds);
+    progressBar.current.max = seconds;
+  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+
+  const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnedMinutes}:${returnedSeconds}`;
   };
+
+  const changeRange = () => {
+    audioPlayer.current.currentTime = progressBar.current.value;
+    setCurrentTime(progressBar.current.value);
+    console.log(audioPlayer.current.currentTime);
+  };
+
+  const togglePlay = () => {
+    const prevValue = isPlaying;
+    setIsPlaying(!prevValue);
+    if (!prevValue) {
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    } else {
+      audioPlayer.current.pause();
+      cancelAnimationFrame(animationRef.current);
+    }
+  };
+
+  const whilePlaying = () => {
+    progressBar.current.value = audioPlayer.current.currentTime;
+    setCurrentTime(progressBar.current.value);
+    animationRef.current = requestAnimationFrame(whilePlaying);
+  };
+
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
@@ -51,6 +92,8 @@ export default function Bottombar() {
 
       <div className="center__container">
         <audio
+          autoplay
+          ref={audioPlayer}
           src="https://cdn.simplecast.com/audio/cae8b0eb-d9a9-480d-a652-0defcbe047f4/episodes/af52a99b-88c0-4638-b120-d46e142d06d3/audio/500344fb-2e2b-48af-be86-af6ac341a6da/default_tc.mp3"
           preload="metadata"
         ></audio>
@@ -58,17 +101,27 @@ export default function Bottombar() {
           <SkipPreviousRoundedIcon className="icon move" />
           <div className="pausePlayButton" onClick={togglePlay}>
             {isPlaying ? (
-              <PlayCircleIcon className="icon" />
-            ) : (
               <PauseCircleRoundedIcon className="icon" />
+            ) : (
+              <PlayCircleIcon className="icon" />
             )}
           </div>
           <SkipNextRoundedIcon className="icon move" />
         </div>
         <div className="bottom__container">
-          <div className="current__time time_text">00:00</div>
-          <input type="range" className="progressBar" />
-          <div className="track__duration time_text">03:00</div>
+          <div className="current__time time_text">
+            {calculateTime(currentTime)}
+          </div>
+          <input
+            type="range"
+            className="progressBar"
+            defaultValue="0"
+            onChange={changeRange}
+            ref={progressBar}
+          />
+          <div className="track__duration time_text">
+            {isNaN(duration) ? "00:00" : calculateTime(duration)}
+          </div>
         </div>
       </div>
 
