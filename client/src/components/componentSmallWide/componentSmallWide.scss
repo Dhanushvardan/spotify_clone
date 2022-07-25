@@ -1,0 +1,30 @@
+
+    .item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        width: 32%;
+        height: 80px;
+        background: rgb(46,43,61);
+        background: linear-gradient(90deg, rgba(46,43,61,0.5) 33%, rgba(50,48,62,0.7) 100%);
+        border-radius: 5px;
+        &:hover{
+            background-color: rgba(106, 106, 106, 0.466);
+            transition: 0.3s;
+        }
+        &:not(:hover){
+            transition: 0.3s;
+        }
+        img{
+            height: 80px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .item__title{
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+    }

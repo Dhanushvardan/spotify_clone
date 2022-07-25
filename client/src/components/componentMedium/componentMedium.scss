@@ -1,0 +1,40 @@
+.componentMedium{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background-color: rgb(24,24,24);
+    width: 14%;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    img{
+        height: 145px;
+        width: 145px;
+        border-radius: 5px;
+        margin-top: 7px;
+    }
+    .component__text{
+        .item__title{
+            margin-top: 20px;
+            padding-left: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+        }
+        .item__publication{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: rgb(138, 138, 138);
+            font-size: 14px;
+            padding-left: 12px;
+            font-weight: 500;
+        }
+    }
+}
