@@ -1,0 +1,141 @@
+.likedMain{
+    background: rgb(82,59,160);
+background: linear-gradient(180deg, rgba(82,59,160,1) 8%, rgba(0,0,0,1) 58%);
+    height: fit-content;
+    flex: 12;
+
+    .main__container{
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .top__container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 35px;
+            margin-top: 0;
+            .left__box{
+                .navigation__iconContainer{
+                    color: rgb(175, 175, 175);
+                    display: flex;
+                    flex-direction: row;
+                    gap: 25px;
+                    .icons{
+                        font-size: 35px;
+                        border-radius: 100%;
+                        background-color: rgba(16, 16, 16, 0.395);
+                        padding: 0 9px;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            .right__box{
+                .user__badge{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    background-color: rgba(0, 0, 0, 0.56);
+                    border-radius: 20px;
+                    padding: 1px 10px;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    .profile__pic{
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 100%;
+                        background-color: white;
+                    }
+                    .user__name{
+                        color: white;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+                    
+                    .icon{
+                        color: white;
+                        font-size: 30px;
+                        cursor: pointer;
+                    }
+                    &:hover{
+                        background-color: rgb(41, 41, 41);
+                    }
+                    &:not(:hover){
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+
+        .middle__container{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin: 0 35px;
+            .left__box{
+                img{
+                    height: 230px;
+                    -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+-moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+                }
+            }
+            .right__box{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                padding-top: 50px;
+                .text__sm{
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+                .text__lg{
+                    font-size: 95px;
+                    font-weight: 800;
+                    margin-bottom: 30px;
+                }
+                .user__details{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    align-items: center;
+                    .profile__pic{
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 100%;
+                        background-color: white;
+                    }
+                    .circle{
+                        height: 5px;
+                        width: 5px;
+                        border-radius: 100%;
+                        background-color: white;
+                    }
+                    .user__name{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .bottom__container{
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(36, 36, 36, 0.319);
+            .play__button{
+                .icon{
+                    padding: 10px;
+                    background-color: #1ED760;
+                    border-radius: 100%;
+                    font-size: 35px;
+                    margin-left: 35px;
+                    margin-top: 20px;
+                }
+            }
+            .table{
+
+            }
+        }
+    }
+}

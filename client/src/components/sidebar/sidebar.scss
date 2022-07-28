@@ -48,7 +48,6 @@
                 align-items: center;
                 gap: 10px;
                 margin-right: 20px;
-                cursor: pointer;
                 .navIcon {
                     font-size: 30px;
                     color: rgb(194, 194, 194);
@@ -57,9 +56,13 @@
                     font-size: 14px;
                     font-weight: 600;
                     color: rgb(194, 194, 194);
+                    cursor: pointer;
                     &:hover {
-                        font-size: 15px;
                         color: white;
+                        transition: 0.4s;
+                    }
+                    &:not(:hover) {
+                        color: rgb(194, 194, 194);
                         transition: 0.4s;
                     }
                 }
@@ -78,10 +81,6 @@
                 font-size: 15px;
                 font-weight: 500;
                 padding: 5px;
-                &:hover {
-                    color: white;
-                    transition: 0.3s;
-                }
             }
         }
     }
