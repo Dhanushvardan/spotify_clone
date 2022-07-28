@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./tableItem.scss";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 export default function TableItem() {
-  return (
-        <div className="table__item">
-            <div className="item__sno">1</div>
+    const [isPlayButton, setPlayButton] = useState(false);
+
+    const mouseEnter = () => {
+        setPlayButton(true);
+    };
+    const mouseLeave = () => {
+        setPlayButton(false);
+    };
+
+    return (
+        <div className="table__item" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+            <div className="item__sno">
+                {
+                    (isPlayButton ? 
+                    <PlayArrowIcon />:
+                    1)
+                }
+            </div>
             <div className="item__title">
                 <div className="left">
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Lisa_-_Lalisa.png/220px-Lisa_-_Lalisa.png" alt="album" />

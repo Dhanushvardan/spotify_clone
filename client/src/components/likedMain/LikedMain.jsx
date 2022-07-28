@@ -30,7 +30,7 @@ export default function LikedMain() {
             <div className="middle__container">
 
                 <div className="left__box">
-                    <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="liked-logo" />
+                    <img src="https://i.pinimg.com/originals/fe/5c/36/fe5c36b8b4cbaa728f3c03a311e002cb.png" alt="liked-logo" />
                 </div>
 
                 <div className="right__box">
