@@ -3,6 +3,7 @@ import Bottombar from "../../components/bottombar/Bottombar";
 import Sidebar from "../../components/sidebar/Sidebar";
 //import Main from "../../components/main/Main";
 import LikedMain from "../../components/likedMain/LikedMain";
+import Main from "../../components/main/Main";
 import "./home.scss";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
     <div className="home">
       <div className="home__container">
         <Sidebar />
-        <LikedMain />
+        <Main />
       </div>
       <Bottombar />
     </div>
