@@ -6,7 +6,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const 
+  // const 
 
   const setSignUp = () => {
     //Code for switch between login/signup
