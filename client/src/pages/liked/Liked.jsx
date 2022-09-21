@@ -1,15 +1,15 @@
 import React from "react";
 import Bottombar from "../../components/bottombar/Bottombar";
 import Sidebar from "../../components/sidebar/Sidebar";
-import Main from "../../components/main/Main";
-import "./home.scss";
+import LikedMain from "../../components/likedMain/LikedMain";
+import "./liked.scss";
 
 export default function Home() {
   return (
-    <div className="home">
-      <div className="home__container">
+    <div className="liked">
+      <div className="liked__container">
         <Sidebar />
-        <Main />
+        <LikedMain />
       </div>
       <Bottombar />
     </div>

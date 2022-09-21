@@ -1,11 +1,6 @@
 import React from "react";
 import "./sidebar.scss";
-import SearchIcon from "@mui/icons-material/Search";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
+import { Link, useLocation } from "react-router-dom";
 export default function Sidebar() {
   const lists = [
     "Classical Essentials",
@@ -24,39 +19,78 @@ export default function Sidebar() {
     "This is Charlie Puth",
   ];
 
+  const location = useLocation();
+  console.log("Current Location>>>", location.pathname.split("/")[1]);
+
   return (
     <div className="sideBar">
       <div className="navOpt">
-        {/* <MoreHorizIcon className="navIcon" /> */}
         <img
+          className="spotify__logo"
           src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
           alt="spotify-logo"
         />
-        <div className="navItems hoverClass">
-          <HomeOutlinedIcon className="navIcon" />
-          <div className="navText">Home</div>
-        </div>
-        <div className="navItems hoverClass">
-          <SearchIcon className="navIcon" />
+
+        <Link to="/home">
+          <div className="navItems hoverClass ">
+            <img
+              src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/home_icon_ppn8oe.png"
+              alt="like-icon"
+              className="img__icon"
+            />
+            <div className="navText">Home</div>
+          </div>
+        </Link>
+
+        <div className="navItems hoverClass ">
+          <img
+            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/search_icon_u7u8ay.png"
+            alt="like-icon"
+            className="img__icon"
+          />
           <div className="navText">Explore</div>
         </div>
-        <div className="navItems hoverClass">
-          <LibraryMusicOutlinedIcon className="navIcon" />
+
+        <div className="navItems hoverClass ">
+          <img
+            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571136/Spotify-clone/library_icon_tqjddv.png"
+            alt="like-icon"
+            className="img__icon"
+          />
           <div className="navText">Your Library</div>
         </div>
+
         <div className="navItems withGap hoverClass">
-          <AddBoxIcon className="navIcon" />
+          <img
+            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/create_icon_dijxlu.png"
+            alt="like-icon"
+            className="img__icon"
+          />
           <div className="navText">Create Playlist</div>
         </div>
-        <div className="navItems hoverClass">
-          <FavoriteBorderIcon className="navIcon" />
-          <div className="navText">Liked Songs</div>
-        </div>
+
+        <Link to="/liked">
+          <div className="navItems hoverClass">
+            {/* <FavoriteBorderIcon className="navIcon" /> */}
+            <img
+              src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663569718/Spotify-clone/like_icon_vmskpy.png"
+              alt="like-icon"
+              className="img__icon"
+            />
+            <div className="navText">Liked Songs</div>
+          </div>
+        </Link>
+
         <div className="navItems bottomItem hoverClass">
-          <BookmarkBorderIcon className="navIcon" />
+          <img
+            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571136/Spotify-clone/bookmark_icon_tjbbjl.png"
+            alt="like-icon"
+            className="img__icon"
+          />
           <div className="navText">Your Episodes</div>
         </div>
       </div>
+
       <div className="trendPlaylist">
         {lists.map((listItem) => (
           <div className="trendItem">{listItem}</div>
