@@ -20,7 +20,7 @@ export default function Sidebar() {
   ];
 
   const location = useLocation();
-  console.log("Current Location>>>", location.pathname.split("/")[1]);
+  //console.log("Current Location>>>", location.pathname.split("/")[1]);
 
   return (
     <div className="sideBar">
@@ -31,7 +31,7 @@ export default function Sidebar() {
           alt="spotify-logo"
         />
 
-        <Link to="/home">
+        <Link to="/">
           <div className="navItems hoverClass ">
             <img
               src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/home_icon_ppn8oe.png"

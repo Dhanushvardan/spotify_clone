@@ -1,0 +1,37 @@
+.auth{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    img{
+        height: 100px;
+    }
+    .login__button{
+        cursor: pointer;
+        background-color: #28ab4f;
+        color: rgb(230, 230, 230);
+        padding: 15px 25px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 50px;
+        border: none;
+        -webkit-box-shadow: 0px 0px 16px -3px rgba(212,212,212,0.5);
+-moz-box-shadow: 0px 0px 16px -3px rgba(212,212,212,0.5);
+box-shadow: 0px 0px 16px -3px rgba(212,212,212,0.5);
+        &:hover{
+            -webkit-box-shadow: 0px 0px 16px 1px rgba(212,212,212,0.65);
+-moz-box-shadow: 0px 0px 16px 1px rgba(212,212,212,0.65);
+box-shadow: 0px 0px 16px 1px rgba(212,212,212,0.65);
+            color: rgb(255, 255, 255);
+            transition: 0.4s;
+        }
+        :not(&:hover){
+            transition: 0.4s;
+        }
+    }
+}
