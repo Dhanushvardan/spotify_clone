@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./sidebar.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { DataLayer } from "../../DataLayer";
+//import { useLocation } from "react-router-dom";
 export default function Sidebar() {
-  const lists = [
-    "Classical Essentials",
-    "Minecraft music",
-    "Hip Hop Mix",
-    "Kpop music",
-    "Work out",
-    "Motivational",
-    "This is Charlie Puth",
-    "Classical Essentials",
-    "Minecraft music",
-    "Hip Hop Mix",
-    "Kpop music",
-    "Work out",
-    "Motivational",
-    "This is Charlie Puth",
-  ];
+  // const lists = [
+  //   "Classical Essentials",
+  //   "Minecraft music",
+  //   "Hip Hop Mix",
+  //   "Kpop music",
+  //   "Work out",
+  //   "Motivational",
+  //   "This is Charlie Puth",
+  //   "Classical Essentials",
+  //   "Minecraft music",
+  //   "Hip Hop Mix",
+  //   "Kpop music",
+  //   "Work out",
+  //   "Motivational",
+  //   "This is Charlie Puth",
+  // ];
 
-  const location = useLocation();
+  //const location = useLocation();
   //console.log("Current Location>>>", location.pathname.split("/")[1]);
+
+  let keyValue = 0;
+  const [{ playlists }] = useContext(DataLayer);
+  // const [playlistsValues, setPlaylistsValues] = useState([]);
+  // setPlaylistsValues(playlists.items);
+  //console.log(playlists);
 
   return (
     <div className="sideBar">
@@ -92,8 +100,10 @@ export default function Sidebar() {
       </div>
 
       <div className="trendPlaylist">
-        {lists.map((listItem) => (
-          <div className="trendItem">{listItem}</div>
+        {playlists?.items?.map((listItem) => (
+          <div className="trendItem" key={keyValue++}>
+            {listItem.name}
+          </div>
         ))}
       </div>
     </div>

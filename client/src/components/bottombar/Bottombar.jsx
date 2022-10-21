@@ -73,7 +73,7 @@ export default function Bottombar() {
       <div className="left__container">
         <div className="left__sub">
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Lisa_-_Lalisa.png/220px-Lisa_-_Lalisa.png"
+            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1666335608/Spotify-clone/500x500_eppij2.jpg"
             alt="album-cover"
           />
         </div>

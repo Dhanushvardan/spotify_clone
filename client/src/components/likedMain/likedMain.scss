@@ -1,9 +1,14 @@
 .likedMain{
-    background: rgb(82,59,160);
-background: linear-gradient(180deg, rgba(82,59,160,1) 8%, rgba(0,0,0,1) 58%);
     height: fit-content;
     flex: 12;
-
+    background-color: black;
+    background: rgb(82,59,160);
+    background: linear-gradient(180deg, rgba(82,59,160,1) 8%, rgba(0,0,0,1) 30%);
+    // .background__container{
+    //     background: rgb(82,59,160);
+    //     background: linear-gradient(180deg, rgba(82,59,160,1) 8%, rgba(0,0,0,1) 58%);
+    //     height: 90vh;
+    // }
     .main__container{
         margin-top: 15px;
         display: flex;

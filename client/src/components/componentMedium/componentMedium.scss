@@ -4,23 +4,23 @@
     align-items: center;
     justify-content: center;
     padding: 6px;
-    background-color: rgb(24,24,24);
+    background-color: rgb(28,28,28);
     width: 14%;
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
     img{
-        height: 145px;
-        width: 145px;
+        height: 90%;
+        width: 90%;
         border-radius: 5px;
         margin-top: 7px;
     }
     .component__text{
+        width: 90%;
         .item__title{
             margin-top: 20px;
-            padding-left: 12px;
             color: white;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 16px;
             overflow: hidden;
     text-overflow: ellipsis;
@@ -34,8 +34,14 @@
             margin-bottom: 20px;
             color: rgb(138, 138, 138);
             font-size: 14px;
-            padding-left: 12px;
             font-weight: 500;
         }
+    }
+    &:hover{
+        background-color:  rgb(47, 47, 47);
+        transition: 0.4s;
+    }
+    &:not(:hover){
+        transition: 0.4s;
     }
 }
