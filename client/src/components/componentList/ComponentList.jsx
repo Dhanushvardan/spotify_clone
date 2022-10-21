@@ -14,7 +14,12 @@ export default function ComponentList({ title, data, type }) {
           data
             .slice(0, 6)
             .map((item) => (
-              <ComponentMedium dataItem={item} key={id++} type={type} />
+              <ComponentMedium
+                dataItem={item}
+                key={id++}
+                type={type}
+                url={item?.images[0]?.url}
+              />
             ))}
       </div>
     </div>

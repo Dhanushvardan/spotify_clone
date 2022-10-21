@@ -8,12 +8,11 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 
 export default function Main() {
-  const [
-    { user, topArtists, recentTracks, playlists, topTracks, savedTracks },
-  ] = useContext(DataLayer);
+  const [{ user, topArtists, recentTracks, playlists, topTracks }] =
+    useContext(DataLayer);
   //console.log("🏆", topTracks);
   //console.log("🌍", recentTracks);
-  console.log("💖", savedTracks);
+  //console.log("💖", savedTracks);
   //console.log("🖐️", playlists);
   return (
     <div className="main">
@@ -45,12 +44,34 @@ export default function Main() {
         <div className="middle__container">
           <div className="greeting__message">Good evening</div>
           <div className="items__container">
-            <ComponentSmallWide />
-            <ComponentSmallWide />
-            <ComponentSmallWide />
-            <ComponentSmallWide />
-            <ComponentSmallWide />
-            <ComponentSmallWide />
+            <ComponentSmallWide
+              type={"liked"}
+              title={"Liked Songs"}
+              url={
+                "https://res.cloudinary.com/dbzzj25vc/image/upload/v1666335459/Spotify-clone/liked-songs-300_qd8dt1.png"
+              }
+            />
+            <ComponentSmallWide
+              type={"top-songs"}
+              title={"Jordan Harbinger Show"}
+              url={
+                "https://res.cloudinary.com/dbzzj25vc/image/upload/v1666381581/Spotify-clone/1000x1000_ogaz5k.jpg"
+              }
+            />
+            <ComponentSmallWide
+              type={"your-episodes"}
+              title={"Your Episodes"}
+              url={
+                "https://res.cloudinary.com/dbzzj25vc/image/upload/v1666381460/Spotify-clone/Screenshot_467_lvry0u.png"
+              }
+            />
+            {playlists?.items.slice(0, 3).map((item) => (
+              <ComponentSmallWide
+                type={"your-playlist"}
+                title={item?.name}
+                url={item?.images[0]?.url}
+              />
+            ))}
           </div>
         </div>
 

@@ -4,23 +4,6 @@ import { Link } from "react-router-dom";
 import { DataLayer } from "../../DataLayer";
 //import { useLocation } from "react-router-dom";
 export default function Sidebar() {
-  // const lists = [
-  //   "Classical Essentials",
-  //   "Minecraft music",
-  //   "Hip Hop Mix",
-  //   "Kpop music",
-  //   "Work out",
-  //   "Motivational",
-  //   "This is Charlie Puth",
-  //   "Classical Essentials",
-  //   "Minecraft music",
-  //   "Hip Hop Mix",
-  //   "Kpop music",
-  //   "Work out",
-  //   "Motivational",
-  //   "This is Charlie Puth",
-  // ];
-
   //const location = useLocation();
   //console.log("Current Location>>>", location.pathname.split("/")[1]);
 
