@@ -1,13 +1,13 @@
 import React from "react";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import "./table.scss";
-import TableItem from "../tableItem/TableItem";
+import "./tablePlaylist.scss";
+import TableItemPlaylist from "../tableItemPlaylist/TableItemPlaylist";
 
-export default function Table({ data }) {
+export default function TablePlaylist({ data }) {
   let sno = 0;
 
   return (
-    <div className="table">
+    <div className="table__playlist">
       <div className="table__head">
         <div className="sno">#</div>
         <div className="title">TITLE</div>
@@ -18,7 +18,7 @@ export default function Table({ data }) {
         </div>
       </div>
       {data?.map((item) => (
-        <TableItem itemData={item} val={++sno} key={sno} />
+        <TableItemPlaylist itemData={item} val={++sno} key={sno} />
       ))}
     </div>
   );

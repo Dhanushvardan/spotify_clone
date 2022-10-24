@@ -4,7 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import LikedMain from "../../components/likedMain/LikedMain";
 import "./liked.scss";
 
-export default function Home({ spotify }) {
+export default function Liked() {
   return (
     <div className="liked">
       <div className="liked__container">

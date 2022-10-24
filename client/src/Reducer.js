@@ -8,6 +8,8 @@ export const initialState = {
   topTracks: [],
   savedTracks: [],
   likedTracks: [],
+  currentOpenPlaylist: [],
+  playlistCoverImage: [],
   //!!!Delete during Deployment!!!
   token: null,
 };
@@ -49,6 +51,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         likedTracks: action.likedTracks,
+      };
+    case "SET_CURRENT_OPEN_PLAYLIST":
+      return {
+        ...state,
+        currentOpenPlaylist: action.currentOpenPlaylist,
+      };
+    case "SET_PLAYLIST_COVER_IMAGE":
+      return {
+        ...state,
+        playlistCoverImage: action.playlistCoverImage,
       };
     default:
       return state;

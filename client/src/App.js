@@ -8,11 +8,13 @@ import Auth from "./pages/auth/Auth";
 import { getTokenFromResponse } from "./spotify.js";
 import SpotifyWebApi from "spotify-web-api-js";
 import { DataLayer } from "./DataLayer";
+import Playlist from "./pages/playlist/Playlist";
+//import PlayArrow from "@mui/icons-material/PlayArrow";
 
 function App() {
   const spotify = new SpotifyWebApi();
   const [{ token }, dispatch] = useContext(DataLayer);
-  //const [playlists, setPlaylists] = useState([]);
+
 
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -62,6 +64,18 @@ function App() {
           likedTracks: likedTracks,
         });
       });
+      spotify.getPlaylist("37i9dQZF1DXa2PvUpywmrr").then((currentOpenPlaylist) => {
+        dispatch({
+          type: "SET_CURRENT_OPEN_PLAYLIST",
+          currentOpenPlaylist: currentOpenPlaylist,
+        });
+      });
+      spotify.getPlaylistCoverImage("37i9dQZF1DXa2PvUpywmrr").then((playlistCoverImage) => {
+        dispatch({
+          type: "SET_PLAYLIST_COVER_IMAGE",
+          playlistCoverImage: playlistCoverImage,
+        });
+      });
     }
   });
 
@@ -71,8 +85,9 @@ function App() {
         <Routes>
           <Route exact path="/">
             <Route path="/" element={token ? <Home /> : <Auth />} />
-            <Route path="/liked" element={<Liked spotify={spotify} />} />
+            <Route path="/liked" element={token ? <Liked /> : <Auth />} />
             <Route path="/login" element={<Auth />} />
+            <Route path="/playlist" element={token ? <Playlist /> : <Auth />} />
           </Route>
         </Routes>
       </BrowserRouter>

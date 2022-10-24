@@ -1,0 +1,137 @@
+.playlistMain{
+    background-color: rgb(27,27,27);
+    height: fit-content;
+    flex: 12;
+    .banner{
+        height: 45vh;
+        position: relative;
+        overflow: hidden;
+        .background__container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            img{
+                width: 100%;
+                position: absolute;
+                top: -50px;
+                object-fit: fill;
+                min-height: 400px;
+            }
+        }
+        .info__container{
+            position: absolute;
+            margin: 0 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 70%;
+            .playlist__text{
+                font-size: 14px;
+                color: white;
+                font-weight: 600;
+            }
+            .playlist__title{
+                color: white;
+                font-size: 6vw;
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+            .description{
+                font-size: 15px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.819);
+                margin-bottom: 20px;
+            }
+            .other__info{
+                color: rgb(227, 227, 227);
+                font-weight: 500;
+                font-size: 14px;
+                display: flex;
+                flex-direction: row;
+                gap: 7px;
+                align-items: center;
+                .divider{
+                    height: 6px;
+                    width: 6px;
+                    border-radius: 50%;
+                    background-color:rgb(227, 227, 227);
+                }
+            }
+
+        }
+        .top__container{
+            padding: 15px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            .left__box{
+                .navigation__iconContainer{
+                    color: rgb(175, 175, 175);
+                    display: flex;
+                    flex-direction: row;
+                    gap: 25px;
+                    .icons{
+                        font-size: 35px;
+                        border-radius: 100%;
+                        background-color: rgba(16, 16, 16, 0.395);
+                        padding: 0 9px;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            .right__box{
+                .user__badge{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    background-color: rgba(0, 0, 0, 0.56);
+                    border-radius: 20px;
+                    padding: 1px 10px;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    .profile__pic{
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 100%;
+                    }
+                    .user__name{
+                        color: white;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+                    
+                    .icon{
+                        color: white;
+                        font-size: 30px;
+                        cursor: pointer;
+                    }
+                    &:hover{
+                        background-color: rgb(41, 41, 41);
+                    }
+                    &:not(:hover){
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    .bottom__container{
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(36, 36, 36, 0.319);
+        .play__button{
+            .icon{
+                padding: 10px;
+                background-color: #1ED760;
+                border-radius: 100%;
+                font-size: 35px;
+                margin-left: 35px;
+                margin-top: 20px;
+            }
+        }
+    }
+}

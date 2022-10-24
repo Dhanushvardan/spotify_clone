@@ -22,7 +22,7 @@ export default function Sidebar() {
           alt="spotify-logo"
         />
 
-        <Link to="/">
+        <Link to="/" className="link">
           <div className="navItems hoverClass ">
             <img
               src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/home_icon_ppn8oe.png"
@@ -60,7 +60,7 @@ export default function Sidebar() {
           <div className="navText">Create Playlist</div>
         </div>
 
-        <Link to="/liked">
+        <Link to="/liked" className="link">
           <div className="navItems hoverClass">
             {/* <FavoriteBorderIcon className="navIcon" /> */}
             <img

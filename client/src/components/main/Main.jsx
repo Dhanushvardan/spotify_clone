@@ -65,7 +65,7 @@ export default function Main() {
                 "https://res.cloudinary.com/dbzzj25vc/image/upload/v1666381460/Spotify-clone/Screenshot_467_lvry0u.png"
               }
             />
-            {playlists?.items.slice(0, 3).map((item) => (
+            {playlists?.items?.slice(0, 3).map((item) => (
               <ComponentSmallWide
                 type={"your-playlist"}
                 title={item?.name}

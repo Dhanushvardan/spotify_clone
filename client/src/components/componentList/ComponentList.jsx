@@ -31,7 +31,7 @@ export default function ComponentList({ title, data, type }) {
       <div className="items__container">
         {data &&
           data
-            .slice(0, 6)
+            ?.slice(0, 6)
             .map((item) => (
               <ComponentMedium dataItem={item?.track} key={id++} type={type} />
             ))}

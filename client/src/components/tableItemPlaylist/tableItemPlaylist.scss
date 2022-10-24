@@ -1,0 +1,71 @@
+.table__itemPlaylist{
+    display: flex;
+    flex-direction: row;
+    color: #b2b2b2;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    .item__sno{
+        flex: 1;
+        padding-left: 10px;
+        font-size: 17px;
+        font-family: 'Varela', sans-serif;
+    }
+    .item__title{
+        flex: 10;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .right{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .title{
+                font-weight: 400;
+                color: white;
+                font-size: 16px;
+            }
+            .artist{
+                font-size: 13px;
+                font-weight: 400;
+            }
+        }       
+        .left{
+            img{
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+    .item__album{
+        flex: 7;
+        font-size: 14px;
+    }
+    .item__date__added{
+        flex: 7;
+        font-size: 14px;
+    }
+    .item__time{
+        flex: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        .icon{
+            color: #1ED760;
+            font-size: 20px;
+        }
+        .duration{
+            font-size: 14px;
+        }
+    }
+    &:hover{
+        background-color: rgba(54, 54, 54, 0.429);
+        transition: 0.3s;
+    }
+    &:not(:hover){
+        transition: 0.3s;
+    }
+}

@@ -1,0 +1,33 @@
+.table__playlist{
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    .table__head{
+        display: flex;
+        flex-direction: row;
+        color: #b2b2b2;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 500;
+        border-bottom: 0.1px solid #91919170;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        .sno{
+            flex: 1;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+        .title{
+            flex: 10;
+        }
+        .album{
+            flex: 7;
+        }
+        .date__added{
+            flex: 7;
+        }
+        .time{
+            flex: 2;
+        }
+    }
+}

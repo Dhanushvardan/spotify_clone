@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./componentMedium.scss";
 
 export default function ComponentMedium({ dataItem, type }) {
@@ -38,7 +39,11 @@ export default function ComponentMedium({ dataItem, type }) {
     <div className="componentMedium">
       <img src={dataItem?.images[0]?.url} alt="component-img" />
       <div className="component__text">
-        <div className="item__title">{dataItem?.name}</div>
+        <div className="item__title">
+          <Link to="/playlist" className="link">
+            {dataItem?.name}
+          </Link>
+        </div>
         <div className="item__publication">{dataItem?.owner?.display_name}</div>
       </div>
     </div>
