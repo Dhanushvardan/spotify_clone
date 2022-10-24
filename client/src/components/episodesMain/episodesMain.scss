@@ -1,0 +1,171 @@
+.episodesMain{
+    font-family: 'Montserrat', sans-serif;
+    flex: 12;
+    background-color: cyan;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    background: rgb(202,7,14);
+    background: linear-gradient(180deg, rgba(202,7,14,1) 1%, rgba(0,0,0,1) 5%);
+
+    .main__container{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .top__container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 35px;
+            margin-top: 0;
+            .left__box{
+                .navigation__iconContainer{
+                    color: rgb(175, 175, 175);
+                    display: flex;
+                    flex-direction: row;
+                    gap: 25px;
+                    .icons{
+                        font-size: 35px;
+                        border-radius: 100%;
+                        background-color: rgba(16, 16, 16, 0.395);
+                        padding: 0 9px;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            .right__box{
+                .user__badge{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    background-color: rgba(0, 0, 0, 0.56);
+                    border-radius: 20px;
+                    padding: 1px 10px;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    .profile__pic{
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 100%;
+                        background-color: white;
+                    }
+                    .user__name{
+                        color: white;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+                    
+                    .icon{
+                        color: white;
+                        font-size: 30px;
+                        cursor: pointer;
+                    }
+                    &:hover{
+                        background-color: rgb(41, 41, 41);
+                    }
+                    &:not(:hover){
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+
+        .middle__container{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin: 0 35px;
+            align-items: center;
+            .left__box{
+                img{
+                    height: 230px;
+                    border-radius: 10px;
+                    -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+-moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.52);
+                }
+            }
+            .right__box{
+                display: flex;
+                flex-direction: column;
+                color: white;
+                padding-top: 50px;
+                .text__sm{
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+                .text__lg{
+                    font-size: 95px;
+                    font-weight: 800;
+                    margin-bottom: 20px;
+                }
+                .creator__text{
+                    font-size: 25px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .bottom__container{
+            background-color: rgba(0, 0, 0, 0.193);
+            .following__container{
+                width: 90%;
+                padding: 20px 35px;
+                .follow__button{
+                    background-color: inherit;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 500;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    border: 1px solid white;
+                }
+            }
+            .data__container{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                .left__container{
+                    flex: 6;
+                    padding: 10px 35px;
+                    display: flex;
+                    flex-direction: column;
+                    .main__text{
+                        color: white;
+                        font-size: 25px;
+                        font-weight: 600;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid rgba(143, 143, 143, 0.251);
+                    }
+                    .episodes__container{
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                }
+                .right__container{
+                    flex: 3;
+                    padding: 15px 30px;
+                    .title{
+                        color: white;
+                        font-size: 25px;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+                    .description{
+                        color: #B3B3B3;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .gap__container{
+        height: 20vh;
+    }
+}

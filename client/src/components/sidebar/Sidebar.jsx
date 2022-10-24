@@ -33,23 +33,27 @@ export default function Sidebar() {
           </div>
         </Link>
 
-        <div className="navItems hoverClass ">
-          <img
-            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/search_icon_u7u8ay.png"
-            alt="like-icon"
-            className="img__icon"
-          />
-          <div className="navText">Explore</div>
-        </div>
+        <Link to="/explore" className="link">
+          <div className="navItems hoverClass ">
+            <img
+              src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571135/Spotify-clone/search_icon_u7u8ay.png"
+              alt="like-icon"
+              className="img__icon"
+            />
+            <div className="navText">Explore</div>
+          </div>
+        </Link>
 
-        <div className="navItems hoverClass ">
-          <img
-            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571136/Spotify-clone/library_icon_tqjddv.png"
-            alt="like-icon"
-            className="img__icon"
-          />
-          <div className="navText">Your Library</div>
-        </div>
+        <Link to="/library" className="link">
+          <div className="navItems hoverClass ">
+            <img
+              src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571136/Spotify-clone/library_icon_tqjddv.png"
+              alt="like-icon"
+              className="img__icon"
+            />
+            <div className="navText">Your Library</div>
+          </div>
+        </Link>
 
         <div className="navItems withGap hoverClass">
           <img

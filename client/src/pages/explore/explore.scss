@@ -1,0 +1,90 @@
+.explore{
+    height: 100vh;
+    .non__player{
+        display: flex;
+        flex-direction: row;
+        .sidebar{
+            flex: 2;
+        }
+        .explore__container{
+            flex: 12;
+            background-color: #121212;
+            padding: 30px;
+            padding-top: 15px;
+            .top__container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .left__box{
+                    .navigation__iconContainer{
+                        color: rgb(175, 175, 175);
+                        display: flex;
+                        flex-direction: row;
+                        gap: 25px;
+                        .icons{
+                            font-size: 35px;
+                            border-radius: 100%;
+                            background-color: rgba(16, 16, 16, 0.395);
+                            padding: 0 9px;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+                .right__box{
+                    .user__badge{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        background-color: rgba(0, 0, 0, 0.56);
+                        border-radius: 20px;
+                        padding: 1px 10px;
+                        align-items: center;
+                        gap: 10px;
+                        cursor: pointer;
+                        .profile__pic{
+                            height: 20px;
+                            width: 20px;
+                            border-radius: 100%;
+                        }
+                        .user__name{
+                            color: white;
+                            font-weight: 600;
+                            font-size: 14px;
+                        }
+                        
+                        .icon{
+                            color: white;
+                            font-size: 30px;
+                            cursor: pointer;
+                        }
+                        &:hover{
+                            background-color: rgb(41, 41, 41);
+                        }
+                        &:not(:hover){
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+            .heading{
+                font-size: 30px;
+                font-weight: 600;
+                color: white;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            .tiles__container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .gap__container{
+                height: 15vh;
+            }
+        }
+    }
+    .bottombar{
+        position: fixed;
+        bottom: 0;
+    }
+}

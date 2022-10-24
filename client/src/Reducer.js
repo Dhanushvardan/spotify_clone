@@ -10,6 +10,7 @@ export const initialState = {
   likedTracks: [],
   currentOpenPlaylist: [],
   playlistCoverImage: [],
+  showDetails: [],
   //!!!Delete during Deployment!!!
   token: null,
 };
@@ -61,6 +62,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlistCoverImage: action.playlistCoverImage,
+      };
+    case "GET_SHOW_DETAILS":
+      return {
+        ...state,
+        showDetails: action.showDetails,
       };
     default:
       return state;

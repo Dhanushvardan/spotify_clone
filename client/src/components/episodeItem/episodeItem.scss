@@ -1,0 +1,94 @@
+.episodeItem{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    color: white;
+    border-bottom: 1px solid rgba(143, 143, 143, 0.251);
+    border-radius: 5px;
+    &:hover{
+        background-color: rgba(93, 93, 93, 0.392);
+        transition: 0.4s;
+    }
+    &:not(:hover){
+        transition: 0.4s;
+    }
+    .left__container__episode{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .episode__image{
+            height: 120px;
+            width: 120px;
+            border-radius: 10px;
+        }
+    }
+    .right__container__episode{
+        width: 80%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .episode__title{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .episode__desc{
+            font-size: 14px;
+            color:rgb(160, 160, 160);
+            line-height: 23px;
+            font-weight: 500;
+        }
+        .control{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .left__info{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                color:rgb(160, 160, 160);
+                .play{
+                    height: 45px;
+                    width: 45px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    .play__icon{
+                        color: white;
+                        font-size: 40px;
+                        cursor: pointer;
+                        &:hover{
+                            font-size: 45px;
+                            transition: 0.5s;
+                        }
+                        &:not(:hover){
+                            transition: 0.5s;
+                        }
+                    }
+                }
+                .date{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    .divider{
+                        height: 5px;
+                        width: 5px;
+                        background-color: rgb(160, 160, 160);
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .isplay{
+                color: #1fce5c;
+            }
+        }
+    }
+}

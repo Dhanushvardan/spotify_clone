@@ -1,0 +1,24 @@
+.categorytile{
+    height: 185px;
+    width: 185px;
+    cursor: pointer;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    margin: 11px;
+    .tileimage{
+        position: absolute;
+        height: 110px;
+        width: 110px;
+        transform: rotate(25deg);
+        top: 95px;
+        left: 95px;
+    }
+    .title{
+        padding: 15px;
+        font-size: 25px;
+        font-weight: 600;
+        color: white;
+    }
+}

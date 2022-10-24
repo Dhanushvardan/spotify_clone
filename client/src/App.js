@@ -3,18 +3,18 @@ import { useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Liked from "./pages/liked/Liked";
-//import Login from "./pages/login/Login";
 import Auth from "./pages/auth/Auth";
+import Playlist from "./pages/playlist/Playlist";
+import Episodes from "./pages/episodes/Episodes";
+import Explore from "./pages/explore/Explore";
+import Library from "./pages/library/Library";
 import { getTokenFromResponse } from "./spotify.js";
 import SpotifyWebApi from "spotify-web-api-js";
 import { DataLayer } from "./DataLayer";
-import Playlist from "./pages/playlist/Playlist";
-//import PlayArrow from "@mui/icons-material/PlayArrow";
 
+export const spotify = new SpotifyWebApi();
 function App() {
-  const spotify = new SpotifyWebApi();
   const [{ token }, dispatch] = useContext(DataLayer);
-
 
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -64,16 +64,18 @@ function App() {
           likedTracks: likedTracks,
         });
       });
-      spotify.getPlaylist("37i9dQZF1DXa2PvUpywmrr").then((currentOpenPlaylist) => {
-        dispatch({
-          type: "SET_CURRENT_OPEN_PLAYLIST",
-          currentOpenPlaylist: currentOpenPlaylist,
+      spotify
+        .getPlaylist("37i9dQZF1DXa2PvUpywmrr")
+        .then((currentOpenPlaylist) => {
+          dispatch({
+            type: "SET_CURRENT_OPEN_PLAYLIST",
+            currentOpenPlaylist: currentOpenPlaylist,
+          });
         });
-      });
-      spotify.getPlaylistCoverImage("37i9dQZF1DXa2PvUpywmrr").then((playlistCoverImage) => {
+      spotify.getShow("4XPl3uEEL9hvqMkoZrzbx5").then((showDetails) => {
         dispatch({
-          type: "SET_PLAYLIST_COVER_IMAGE",
-          playlistCoverImage: playlistCoverImage,
+          type: "GET_SHOW_DETAILS",
+          showDetails: showDetails,
         });
       });
     }
@@ -88,6 +90,9 @@ function App() {
             <Route path="/liked" element={token ? <Liked /> : <Auth />} />
             <Route path="/login" element={<Auth />} />
             <Route path="/playlist" element={token ? <Playlist /> : <Auth />} />
+            <Route path="/episodes" element={token ? <Episodes /> : <Auth />} />
+            <Route path="/explore" element={token ? <Explore /> : <Auth />} />
+            <Route path="/library" element={token ? <Library /> : <Auth />} />
           </Route>
         </Routes>
       </BrowserRouter>

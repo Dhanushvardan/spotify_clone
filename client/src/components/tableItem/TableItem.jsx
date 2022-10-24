@@ -5,7 +5,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 export default function TableItem({ itemData, val }) {
   const [isPlayButton, setPlayButton] = useState(false);
-  console.log("🌐", itemData);
+  //console.log("🌐", itemData);
 
   const mouseEnter = () => {
     setPlayButton(true);
