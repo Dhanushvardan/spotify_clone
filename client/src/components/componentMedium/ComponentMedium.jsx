@@ -9,7 +9,7 @@ export default function ComponentMedium({ dataItem, type }) {
     <div className="componentMedium">
       <img src={dataItem?.images[1]?.url} alt="component-img" />
       <div className="component__text">
-        <div className="item__title" style={{ "margin-bottom": "20px" }}>
+        <div className="item__title" style={{ marginBottom: "20px" }}>
           {dataItem?.name}
         </div>
         {/* <div className="item__publication">{dataItem?.artists[0]?.name}</div> */}
@@ -42,7 +42,7 @@ export default function ComponentMedium({ dataItem, type }) {
       <img src={dataItem?.images[0]?.url} alt="component-img" />
       <div className="component__text">
         <div className="item__title">
-          <Link to="/playlist" className="link">
+          <Link to={"/playlist/" + dataItem?.id} className="link">
             {dataItem?.name}
           </Link>
         </div>

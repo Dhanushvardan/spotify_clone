@@ -12,6 +12,7 @@ export default function Sidebar() {
   // const [playlistsValues, setPlaylistsValues] = useState([]);
   // setPlaylistsValues(playlists.items);
   //console.log(playlists);
+  //console.log("🗺️", location?.pathname);
 
   return (
     <div className="sideBar">
@@ -29,7 +30,7 @@ export default function Sidebar() {
               alt="like-icon"
               className="img__icon"
             />
-            <div className="navText">Home</div>
+            <div className="navText active">Home</div>
           </div>
         </Link>
 
@@ -76,7 +77,7 @@ export default function Sidebar() {
           </div>
         </Link>
 
-        <div className="navItems bottomItem hoverClass">
+        <div className="navItems bottomItem hoverClass restrict">
           <img
             src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1663571136/Spotify-clone/bookmark_icon_tjbbjl.png"
             alt="like-icon"
@@ -89,7 +90,9 @@ export default function Sidebar() {
       <div className="trendPlaylist">
         {playlists?.items?.map((listItem) => (
           <div className="trendItem" key={keyValue++}>
-            {listItem.name}
+            <Link to={"/playlist/" + listItem?.id} className="link">
+              {listItem.name}
+            </Link>
           </div>
         ))}
       </div>

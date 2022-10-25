@@ -15,7 +15,7 @@ export default function Home() {
         <Sidebar />
         <Main />
       </div>
-      <Bottombar />
+      {/* <Bottombar /> */}
     </div>
   );
 }

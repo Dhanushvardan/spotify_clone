@@ -1,6 +1,6 @@
 import "./app.scss";
 import { useEffect, useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Liked from "./pages/liked/Liked";
 import Auth from "./pages/auth/Auth";
@@ -8,6 +8,7 @@ import Playlist from "./pages/playlist/Playlist";
 import Episodes from "./pages/episodes/Episodes";
 import Explore from "./pages/explore/Explore";
 import Library from "./pages/library/Library";
+import Bottombar from "./components/bottombar/Bottombar";
 import { getTokenFromResponse } from "./spotify.js";
 import SpotifyWebApi from "spotify-web-api-js";
 import { DataLayer } from "./DataLayer";
@@ -78,6 +79,12 @@ function App() {
           showDetails: showDetails,
         });
       });
+      spotify.getMyCurrentPlayingTrack().then((currentlyPlaying) => {
+        dispatch({
+          type: "SET_CURRENTLY_PLAYING",
+          currentlyPlaying: currentlyPlaying,
+        });
+      });
     }
   });
 
@@ -89,12 +96,19 @@ function App() {
             <Route path="/" element={token ? <Home /> : <Auth />} />
             <Route path="/liked" element={token ? <Liked /> : <Auth />} />
             <Route path="/login" element={<Auth />} />
-            <Route path="/playlist" element={token ? <Playlist /> : <Auth />} />
-            <Route path="/episodes" element={token ? <Episodes /> : <Auth />} />
+            <Route
+              path="/playlist/:id"
+              element={token ? <Playlist /> : <Auth />}
+            />
+            <Route
+              path="/episodes/:id"
+              element={token ? <Episodes /> : <Auth />}
+            />
             <Route path="/explore" element={token ? <Explore /> : <Auth />} />
             <Route path="/library" element={token ? <Library /> : <Auth />} />
           </Route>
         </Routes>
+        {token && <Bottombar />}
       </BrowserRouter>
     </div>
   );

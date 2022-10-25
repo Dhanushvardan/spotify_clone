@@ -68,6 +68,11 @@ const reducer = (state, action) => {
         ...state,
         showDetails: action.showDetails,
       };
+    case "SET_CURRENTLY_PLAYING":
+      return {
+        ...state,
+        currentlyPlaying: action.currentlyPlaying,
+      };
     default:
       return state;
   }

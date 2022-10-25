@@ -8,10 +8,12 @@ import CategoryTile from "../../components/categoryTile/CategoryTile";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import { motion } from "framer-motion";
 
 export default function Explore() {
   const [{ user, token }] = useContext(DataLayer);
   const [categories, setCategories] = useState(null);
+  let _id = 0;
 
   useEffect(() => {
     spotify.setAccessToken(token);
@@ -24,7 +26,12 @@ export default function Explore() {
     <div className="explore">
       <div className="non__player">
         <Sidebar className="sidebar" />
-        <div className="explore__container">
+        <motion.div
+          className="explore__container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.05 }}
+        >
           <div className="top__container">
             <div className="left__box">
               <div className="navigation__iconContainer">
@@ -51,13 +58,13 @@ export default function Explore() {
           <div className="heading">Browse All</div>
           <div className="tiles__container">
             {categories?.categories?.items?.map((item) => (
-              <CategoryTile tileDetail={item} />
+              <CategoryTile tileDetail={item} key={_id++} />
             ))}
           </div>
           <div className="gap__container"></div>
-        </div>
+        </motion.div>
       </div>
-      <Bottombar className="bottombar" />
+      {/* <Bottombar className="bottombar" /> */}
     </div>
   );
 }

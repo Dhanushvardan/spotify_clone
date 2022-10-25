@@ -11,7 +11,7 @@ export default function Episodes() {
         <Sidebar />
         <EpisodesMain />
       </div>
-      <Bottombar />
+      {/* <Bottombar /> */}
     </div>
   );
 }

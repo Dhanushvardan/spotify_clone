@@ -24,6 +24,9 @@
         padding-top: 10px;
         position: sticky;
         top: 0;
+        .restrict{
+            cursor: not-allowed;
+        }
         .navOpt {
             display: flex;
             flex-direction: column;

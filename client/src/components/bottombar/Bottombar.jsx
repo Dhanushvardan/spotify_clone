@@ -8,6 +8,7 @@ import VolumeDownRoundedIcon from "@mui/icons-material/VolumeDownRounded";
 import RepeatRoundedIcon from "@mui/icons-material/RepeatRounded";
 import ShuffleRoundedIcon from "@mui/icons-material/ShuffleRounded";
 import PauseCircleRoundedIcon from "@mui/icons-material/PauseCircleRounded";
+import { spotify } from "../../App";
 
 export default function Bottombar() {
   const audioPlayer = useRef();
@@ -19,11 +20,25 @@ export default function Bottombar() {
   const [isRepeat, setIsRepeat] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [currentTrack, setCurrentTrack] = useState(null);
+
+  setTimeout(
+    () =>
+      spotify.getMyCurrentPlayingTrack().then((data) => {
+        setCurrentTrack(data);
+        setCurrentTime(data?.progress_ms / 1000);
+        setDuration(data?.item?.duration_ms / 1000);
+        setIsPlaying(currentTrack?.is_playing);
+        //console.log("🚮", currentTrack);
+      }),
+    10000
+  );
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
     setDuration(seconds);
     progressBar.current.max = seconds;
+    setTimeout(() => console.log("Time-out"), 1000);
   }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
   const calculateTime = (secs) => {
@@ -37,12 +52,14 @@ export default function Bottombar() {
   const changeRange = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
     setCurrentTime(progressBar.current.value);
-    console.log(audioPlayer.current.currentTime);
+    //console.log(audioPlayer.current.currentTime);
   };
 
   const togglePlay = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
+    if (isPlaying) spotify.play();
+    else spotify.pause();
     if (!prevValue) {
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -73,15 +90,22 @@ export default function Bottombar() {
       <div className="left__container">
         <div className="left__sub">
           <img
-            src="https://res.cloudinary.com/dbzzj25vc/image/upload/v1666335608/Spotify-clone/500x500_eppij2.jpg"
+            src={
+              currentTrack?.item?.album?.images[0]?.url ||
+              "https://res.cloudinary.com/dbzzj25vc/image/upload/v1666335608/Spotify-clone/500x500_eppij2.jpg"
+            }
             alt="album-cover"
           />
         </div>
 
         <div className="right__sub">
           <div className="song__details">
-            <div className="song__name">MONEY</div>
-            <div className="artist__name">LISA</div>
+            <div className="song__name">
+              {currentTrack?.item?.name || "MONEY"}
+            </div>
+            <div className="artist__name">
+              {currentTrack?.item?.artists[0]?.name || "LISA"}
+            </div>
           </div>
           <FavoriteIcon
             className={isLiked ? "like_icon_liked" : "like_icon_notLiked"}
@@ -91,11 +115,7 @@ export default function Bottombar() {
       </div>
 
       <div className="center__container">
-        <audio
-          ref={audioPlayer}
-          src="https://cdn.simplecast.com/audio/cae8b0eb-d9a9-480d-a652-0defcbe047f4/episodes/af52a99b-88c0-4638-b120-d46e142d06d3/audio/500344fb-2e2b-48af-be86-af6ac341a6da/default_tc.mp3"
-          preload="metadata"
-        ></audio>
+        <audio ref={audioPlayer}></audio>
         <div className="top__container">
           <SkipPreviousRoundedIcon className="icon move" />
           <div className="pausePlayButton" onClick={togglePlay}>

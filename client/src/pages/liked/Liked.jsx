@@ -11,7 +11,7 @@ export default function Liked() {
         <Sidebar />
         <LikedMain />
       </div>
-      <Bottombar />
+      {/* <Bottombar /> */}
     </div>
   );
 }
