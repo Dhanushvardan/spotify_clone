@@ -1,7 +1,8 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "dc8a9df2dcb94dcaa855820a2ffdbb77";
-const redirectUri = "https://spotify-clone-pranaav.netlify.app";
+const redirectUri = "https://spotify-clone-lime-nu.vercel.app/#";
+//https://spotify-clone-pranaav.netlify.app
 const scopes = [
   "user-read-currently-playing",
   "user-read-recently-played",
