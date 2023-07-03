@@ -1,7 +1,7 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "dc8a9df2dcb94dcaa855820a2ffdbb77";
-const redirectUri = "https://spotify-clone-lime-nu.vercel.app/";
+const redirectUri = "//https://spotify-clone-lime-nu.vercel.app/#";
 //https://spotify-clone-lime-nu.vercel.app/#
 
 //http://localhost:3000/
@@ -32,3 +32,4 @@ export const getTokenFromResponse = () => {
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=token&show_dialog=true`;
+console.log(accessUrl);
